@@ -11,10 +11,10 @@
 development:
   adapter: mysql2
   encoding: utf8
-  database: angry-man_development
+  database: angry_man_development
   pool: 5
-  username: root
-  password:
+  username: angry_man
+  password: angry_man
   host: localhost
 
 # Warning: The database defined as "test" will be erased and
@@ -23,17 +23,17 @@ development:
 test:
   adapter: mysql2
   encoding: utf8
-  database: angry-man_test
+  database: angry_man_test
   pool: 5
-  username: root
-  password:
+  username: angry_man
+  password: angry_man
   host: localhost
 
 production:
   adapter: mysql2
   encoding: utf8
-  database: angry-man_production
+  database: angry_man_production
   pool: 5
-  username: root
-  password:
+  username: angry_man
+  password: angry_man
   host: localhost
