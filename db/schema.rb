@@ -11,7 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131112114132) do
+ActiveRecord::Schema.define(version: 20131112135902) do
+
+  create_table "assist_system_users", force: true do |t|
+    t.string   "username"
+    t.string   "password"
+    t.string   "base64key"
+    t.integer  "assist_system_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "assist_system_users", ["assist_system_id"], name: "index_assist_system_users_on_assist_system_id", using: :btree
+
+  create_table "assist_systems", force: true do |t|
+    t.string   "name"
+    t.string   "host"
+    t.string   "port"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "servers", force: true do |t|
     t.string "code",    limit: 2
