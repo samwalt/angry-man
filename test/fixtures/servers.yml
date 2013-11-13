@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  code: MyString
+  service: MyString
+  ip: MyString
+  port: MyString
+
+two:
+  code: MyString
+  service: MyString
+  ip: MyString
+  port: MyString
