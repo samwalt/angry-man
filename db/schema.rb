@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131112135902) do
+ActiveRecord::Schema.define(version: 20131113145556) do
 
   create_table "assist_system_users", force: true do |t|
     t.string   "username"
@@ -33,10 +33,12 @@ ActiveRecord::Schema.define(version: 20131112135902) do
   end
 
   create_table "servers", force: true do |t|
-    t.string "code",    limit: 2
-    t.string "service", limit: 10
-    t.string "ip",      limit: 15
-    t.string "port",    limit: 5
+    t.string   "code",       limit: 2
+    t.string   "service",    limit: 10
+    t.string   "ip",         limit: 15
+    t.string   "port",       limit: 5
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

@@ -26,4 +26,7 @@ AngryMan::Application.configure do
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
   config.assets.debug = true
+
+  # autoload by tao.yang 2013-11-16
+  config.autoload_paths += Dir["#{config.root}/lib/**/"]
 end
