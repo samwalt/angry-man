@@ -1,0 +1,2 @@
+module Webhook::JiraHelper
+end
