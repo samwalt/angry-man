@@ -34,6 +34,10 @@ end
 
 gem 'therubyracer', '0.12.0'
 
+gem "curb", "~> 0.8.5"
+
+gem "workflow", "~> 1.0.0"
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
