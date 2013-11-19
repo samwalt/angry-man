@@ -33,7 +33,7 @@ group :doc do
 end
 
 gem 'therubyracer', '0.12.0'
-
+gem 'workflow', '1.0.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
