@@ -5,6 +5,7 @@ gem 'rails', '4.0.1'
 
 # Use mysql as the database for Active Record
 gem 'mysql2', '0.3.13'
+gem 'sqlite3'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -33,6 +34,10 @@ group :doc do
 end
 
 gem 'therubyracer', '0.12.0'
+
+gem 'workflow', '1.1.0'
+
+gem 'ruby-graphviz' 
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'

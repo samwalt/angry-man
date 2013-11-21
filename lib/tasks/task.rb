@@ -6,8 +6,10 @@ class Task
 	workflow do
 		state :new do
 			puts "create feature branch"
-			event :push, :transitions_to => :new do
-				puts "add to changeset"
+			event :push, :transitions_to => :new do | what |
+				puts "add to changeset" + what.to_s
+				self.developer_submit!
+				self.halt!
 			end
 			event :developer_submit, :transitions_to => :review do
 				puts "review code"
