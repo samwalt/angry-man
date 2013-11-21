@@ -34,15 +34,11 @@ group :doc do
 end
 
 gem 'therubyracer', '0.12.0'
-<<<<<<< HEAD
 
 gem 'workflow', '1.1.0'
 
 gem 'ruby-graphviz' 
 
-=======
-gem 'workflow', '1.0.0'
->>>>>>> ff9e53ad68907cfcfc7727dabde96d002c297ba0
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
