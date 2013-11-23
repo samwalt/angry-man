@@ -3,7 +3,7 @@ module Atlassian
     module Git
       # merge stash api
       def merge
-
+        #
       end
 
       # create feature branch
