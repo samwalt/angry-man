@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://ruby.taobao.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.1'
@@ -32,11 +32,13 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-gem 'therubyracer', '0.12.0'
+gem 'therubyracer', '~> 0.12.0'
 
-gem "curb", "~> 0.8.5"
+gem 'curb', '~> 0.8.5'
 
-gem "workflow", "~> 1.0.0"
+gem 'workflow', '~> 1.0.0'
+
+gem 'sqlite3', '~> 1.3.8'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
