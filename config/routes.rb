@@ -3,6 +3,7 @@ AngryMan::Application.routes.draw do
   namespace :webhook do
     resources :jira
     resources :stash
+    resources :crucible
   end
 
   root to: 'welcome#index'
