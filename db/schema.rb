@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20131113145556) do
     t.datetime "updated_at"
   end
 
-  add_index "assist_system_users", ["assist_system_id"], name: "index_assist_system_users_on_assist_system_id", using: :btree
+  add_index "assist_system_users", ["assist_system_id"], name: "index_assist_system_users_on_assist_system_id"
 
   create_table "assist_systems", force: true do |t|
     t.string   "name"
