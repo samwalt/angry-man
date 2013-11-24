@@ -1,3 +1,5 @@
+require 'task'
+
 class Webhook::JiraController < ApplicationController
   skip_before_filter :verify_authenticity_token, :only => [:create]
 
@@ -97,6 +99,11 @@ class Webhook::JiraController < ApplicationController
   # Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms)
   def create
     @params = params
+
+	#create a new workflow
+	issue_key = @params["issue"]["key"]
+	task = Task.new
+	$workflow_hash[issue_key] = task
 
     render :nothing => true
   end
