@@ -4,7 +4,6 @@
   <thead>
     <tr>
       <th>Model name</th>
-      <th>Diagram generated</th>
       <th>Description</th>
       <th></th>
       <th></th>
@@ -16,7 +15,6 @@
     <% @task_workflow_definitions.each do |task_workflow_definition| %>
       <tr>
         <td><%= task_workflow_definition.model_name %></td>
-        <td><%= task_workflow_definition.diagram_generated %></td>
         <td><%= task_workflow_definition.description %></td>
         <td><%= link_to 'Show', task_workflow_definition %></td>
         <td><%= link_to 'Edit', edit_task_workflow_definition_path(task_workflow_definition) %></td>
