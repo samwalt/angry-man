@@ -11,7 +11,7 @@
 development:
   adapter: sqlite3
   encoding: utf8
-  database: angry_man_development
+  database: db/angry_man_development.sqlite3
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
