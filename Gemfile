@@ -36,7 +36,7 @@ gem 'therubyracer', '~> 0.12.0'
 
 gem 'curb', '~> 0.8.5'
 
-gem 'workflow', '~> 1.0.0'
+gem 'workflow', '~> 1.1.0'
 
 gem 'sqlite3', '~> 1.3.8'
 
