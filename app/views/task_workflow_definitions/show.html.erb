@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Model name:</strong>
+  <%= @task_workflow_definition.model_name %>
+</p>
+
+<p>
+  <strong>Diagram generated:</strong>
+  <%= @task_workflow_definition.diagram_generated %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @task_workflow_definition.description %>
+</p>
+
+<p>
+  <%= image_tag('task_workflow_definitions/' + @task_workflow_definition.model_name + '.png') %>
+</p>
+
+<%= link_to 'Edit', edit_task_workflow_definition_path(@task_workflow_definition) %> |
+<%= link_to 'Back', task_workflow_definitions_path %>

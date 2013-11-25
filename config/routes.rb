@@ -1,5 +1,7 @@
 AngryMan::Application.routes.draw do
 
+  resources :task_workflow_definitions
+
   namespace :webhook do
     resources :jira
     resources :stash
