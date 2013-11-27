@@ -1,5 +1,8 @@
 AngryMan::Application.routes.draw do
 
+  devise_for :users
+  resources :angrymen
+
   resources :task_workflow_definitions
 
   namespace :webhook do

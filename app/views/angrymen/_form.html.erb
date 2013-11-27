@@ -1,0 +1,27 @@
+<%= form_for(@angryman) do |f| %>
+  <% if @angryman.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@angryman.errors.count, "error") %> prohibited this angryman from being saved:</h2>
+
+      <ul>
+      <% @angryman.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nick %><br>
+    <%= f.text_field :nick %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+  <%= render partial: 'avatars/form',
+          object: @angryman,
+          as: :avatarable %>
+
