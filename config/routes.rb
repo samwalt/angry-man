@@ -1,9 +1,9 @@
 AngryMan::Application.routes.draw do
 
-  resources :systems
-
   devise_for :users
-  resources :angrymen
+  resources :angrymen do
+    resources :systems
+  end
 
   resources :task_workflow_definitions
 

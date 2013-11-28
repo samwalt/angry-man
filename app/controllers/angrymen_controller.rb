@@ -10,6 +10,7 @@ class AngrymenController < ApplicationController
   # GET /angrymen/1
   # GET /angrymen/1.json
   def show
+    @systems = @angryman.systems
   end
 
   # GET /angrymen/new
@@ -59,6 +60,11 @@ class AngrymenController < ApplicationController
       format.html { redirect_to angrymen_url }
       format.json { head :no_content }
     end
+  end
+
+  # GET /angrymen/1/systems
+  def systems
+    @systems = @angryman.systems
   end
 
   private
