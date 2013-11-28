@@ -1,0 +1,18 @@
+<div class="avatar-update">
+  <%= render partial: 'avatars/current',
+             object: avatarable,
+             as: :avatarable %>
+
+  <%= form_for avatarable, url: avatar_path, multipart: true do |f| %>
+    <%= f.hidden_field :id %>
+    <%= f.file_field :logo, "data-url" => avatar_path %>
+  <% end %>
+</div>
+
+<%= render partial: 'avatars/progress' %>
+
+<%= javascript_tag do %>
+  $(function() {
+    AvatarForRails.edit();
+  }); 
+<% end %>

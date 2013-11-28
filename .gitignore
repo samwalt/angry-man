@@ -29,6 +29,7 @@ test/version_tmp
 tmp
 # Ignore generated workflow png
 public/images/task_workflow_definitions/*
+public/system
 
 # YARD artifacts
 .yardoc

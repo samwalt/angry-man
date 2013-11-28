@@ -42,6 +42,10 @@ gem 'sqlite3', '~> 1.3.8'
 
 gem 'ruby-graphviz', '~> 1.0.9'
 
+gem 'avatars_for_rails'
+
+gem 'devise'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
