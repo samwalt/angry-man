@@ -1,7 +1,8 @@
 # Load the Rails application.
 require File.expand_path('../application', __FILE__)
+require 'angryman/angryman'
 
 # Initialize the Rails application.
 AngryMan::Application.initialize!
 
-$workflow_hash = Hash.new
+$angryman = Angryman.new

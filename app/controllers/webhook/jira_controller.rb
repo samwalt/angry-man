@@ -1,4 +1,4 @@
-require 'task'
+require 'angryman/tasks/task'
 
 class Webhook::JiraController < ApplicationController
   skip_before_filter :verify_authenticity_token, :only => [:create]
@@ -102,8 +102,8 @@ class Webhook::JiraController < ApplicationController
 
 	#create a new workflow
 	issue_key = @params["issue"]["key"]
-	task = Task.new
-	$workflow_hash[issue_key] = task
+	task = Angryman::Tasks::Task.new
+	$angryman.add_task(issue_key, task)
 
     render :nothing => true
   end
