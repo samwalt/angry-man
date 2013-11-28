@@ -103,7 +103,7 @@ class Webhook::JiraController < ApplicationController
 	#create a new workflow
 	issue_key = @params["issue"]["key"]
 	task = Angryman::Tasks::Task.new
-	$workflow_hash[issue_key] = task
+	$angryman.add_task(issue_key, task)
 
     render :nothing => true
   end

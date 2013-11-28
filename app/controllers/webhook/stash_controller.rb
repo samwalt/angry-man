@@ -69,6 +69,8 @@ class Webhook::StashController < ApplicationController
   #Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.0ms)
   def create
     @params = params
+
+
     render :nothing => true
   end
 
