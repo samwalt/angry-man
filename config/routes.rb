@@ -1,5 +1,7 @@
 AngryMan::Application.routes.draw do
 
+  resources :systems
+
   devise_for :users
   resources :angrymen
 
