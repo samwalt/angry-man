@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131128133104) do
+ActiveRecord::Schema.define(version: 20131130064331) do
 
   create_table "angrymen", force: true do |t|
     t.string   "nick"
@@ -46,15 +46,6 @@ ActiveRecord::Schema.define(version: 20131128133104) do
 
   add_index "assist_systems", ["angryman_id"], name: "index_assist_systems_on_angryman_id"
   add_index "assist_systems", ["name"], name: "index_assist_systems_on_name", unique: true
-
-  create_table "servers", force: true do |t|
-    t.string   "code",       limit: 2
-    t.string   "service",    limit: 10
-    t.string   "ip",         limit: 15
-    t.string   "port",       limit: 5
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
 
   create_table "systems", force: true do |t|
     t.string   "name"
