@@ -5,3 +5,10 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+AiderServer.create([{name: 'Jira', host: '10.200.188.105', port: '8075'},
+                    {name: 'Bamboo', host: '10.200.188.105', port: '8085'},
+                    {name: 'Stash', host: '10.200.188.105', port: '7990'},
+                    {name: 'Crucible', host: '10.200.188.105', port: '8060'}])
+
+
