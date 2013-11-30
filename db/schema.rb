@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131130064331) do
+ActiveRecord::Schema.define(version: 20131130073526) do
 
   create_table "angrymen", force: true do |t|
     t.string   "nick"
@@ -24,28 +24,6 @@ ActiveRecord::Schema.define(version: 20131130064331) do
   end
 
   add_index "angrymen", ["nick"], name: "index_angrymen_on_nick", unique: true
-
-  create_table "assist_system_users", force: true do |t|
-    t.string   "username"
-    t.string   "password"
-    t.string   "base64key"
-    t.integer  "assist_system_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "assist_system_users", ["assist_system_id"], name: "index_assist_system_users_on_assist_system_id"
-
-  create_table "assist_systems", force: true do |t|
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "type"
-    t.integer  "angryman_id"
-  end
-
-  add_index "assist_systems", ["angryman_id"], name: "index_assist_systems_on_angryman_id"
-  add_index "assist_systems", ["name"], name: "index_assist_systems_on_name", unique: true
 
   create_table "systems", force: true do |t|
     t.string   "name"
