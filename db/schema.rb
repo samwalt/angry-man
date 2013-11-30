@@ -11,7 +11,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131130073526) do
+ActiveRecord::Schema.define(version: 20131130082923) do
+
+  create_table "aider_servers", force: true do |t|
+    t.string   "name"
+    t.string   "host"
+    t.string   "port"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "aider_systems", force: true do |t|
+    t.string   "name"
+    t.string   "username"
+    t.string   "password"
+    t.string   "base64key"
+    t.integer  "system_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "aider_server_id"
+  end
+
+  add_index "aider_systems", ["system_id", "aider_server_id"], name: "index_aider_systems_on_system_id_and_aider_server_id"
 
   create_table "angrymen", force: true do |t|
     t.string   "nick"

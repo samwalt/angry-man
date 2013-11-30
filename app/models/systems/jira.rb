@@ -1,3 +1,3 @@
 class Jira < System
-  has_one :assist_system
+  has_one :aider_system
 end
