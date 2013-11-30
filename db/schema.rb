@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131130082923) do
+ActiveRecord::Schema.define(version: 20131130093128) do
 
   create_table "aider_servers", force: true do |t|
     t.string   "name"
@@ -42,6 +42,8 @@ ActiveRecord::Schema.define(version: 20131130082923) do
     t.string   "logo_content_type"
     t.integer  "logo_file_size"
     t.datetime "logo_updated_at"
+    t.string   "workflow_state"
+    t.string   "issue_key"
   end
 
   add_index "angrymen", ["nick"], name: "index_angrymen_on_nick", unique: true
