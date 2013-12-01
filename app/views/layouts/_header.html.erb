@@ -2,16 +2,16 @@
 	<div id="nav_container4">
 		<ul>
 		  <li><%= link_to_unless_current("Home", { controller: "welcome", action: "index" }) do 
-		  	link_to("Go Home", { controller: "welcome", action: "index" })
+		  	link_to("Home", { controller: "welcome", action: "index" }, :class => 'btn-highlight')
 		   end%></li>
 		  <li><%= link_to_unless_current("Dashboard", { controller: "dashboard", action: "index" }) do 
-		  	link_to("Go Dashboard", { controller: "dashboard", action: "index" })
+		  	link_to("Dashboard", { controller: "dashboard", action: "index" }, :class => 'btn-highlight')
 		  	end %></li>
 		  <li><%= link_to_unless_current("Projects", { controller: "projects", action: "index" }) do 
-		  	link_to("Go Projects", { controller: "projects", action: "index"  })
+		  	link_to("Projects", { controller: "projects", action: "index"  }, :class => 'btn-highlight')
 		  	end %></li>
 		  <li><%= link_to_unless_current("About Us", { controller: "about", action: "index" }) do 
-			link_to("Go About Us", { controller: "about", action: "index" })
+			link_to("Projects", { controller: "about", action: "index" }, :class => 'btn-highlight')
 		  	end  %></li>
 		</ul>
 	</div>

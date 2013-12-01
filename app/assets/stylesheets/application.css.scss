@@ -17,7 +17,6 @@
 	font-family: Verdana, Arial, Helvetica, sans-serif;
 	margin: 0;
 	font-size: 80%;
-	font-weight: bold;
 	}	
 
 	ul {
@@ -41,7 +40,6 @@
 	background-image: asset-url('bg5.gif', image);
 	background-position: 0px -70px;
   	background-repeat: no-repeat;
-	font-weight:bold;
 	height:30px;
 	padding-top:5px;
 	display:block;
@@ -55,4 +53,13 @@
 	background-image: asset-url('bg5.gif', image);
 	background-position: 0px 0px;
   	background-repeat: no-repeat;
+	}
+	
+	.btn-highlight {
+	font-size: 120%;
+	background-image: asset-url('bg3.gif', image);
+	background-position: -200px 0px;
+  	background-repeat: repeat-x;
+	font-weight: bold;
+	color:#F00	
 	}
