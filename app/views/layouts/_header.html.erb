@@ -1,0 +1,23 @@
+<div style="clear:both;width:100%;"></div>
+	<div id="nav_container4">
+		<ul>
+		  <li><%= link_to_unless_current("Home", { controller: "welcome", action: "index" }) do 
+		  	link_to("Go Home", { controller: "welcome", action: "index" })
+		   end%></li>
+		  <li><%= link_to_unless_current("Dashboard", { controller: "dashboard", action: "index" }) do 
+		  	link_to("Go Dashboard", { controller: "dashboard", action: "index" })
+		  	end %></li>
+		  <li><%= link_to_unless_current("Projects", { controller: "projects", action: "index" }) do 
+		  	link_to("Go Projects", { controller: "projects", action: "index"  })
+		  	end %></li>
+		  <li><%= link_to_unless_current("About Us", { controller: "about", action: "index" }) do 
+			link_to("Go About Us", { controller: "about", action: "index" })
+		  	end  %></li>
+		</ul>
+	</div>
+</div>
+
+<script>
+roller.init('nav_container4','v',-66,0,250,20);
+</script>
+<div style="clear:both;width:100%;"></div>
