@@ -13,6 +13,8 @@ AngryMan::Application.routes.draw do
     resources :crucible
   end
 
+  resources :dashboard, :projects, :about
+
   root to: 'welcome#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
