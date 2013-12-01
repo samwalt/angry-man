@@ -46,8 +46,6 @@ gem 'avatars_for_rails'
 
 gem 'devise'
 
-gem "navigasmic"
-
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
