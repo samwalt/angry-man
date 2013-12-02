@@ -25,10 +25,11 @@ class SystemsController < ApplicationController
   # POST /systems.json
   def create
     @system = System.new(system_params)
+    @angryman = Angryman.find(params[:angryman_id])
 
     respond_to do |format|
       if @system.save
-        format.html { redirect_to @system, notice: 'System was successfully created.' }
+        format.html { redirect_to [@angryman, @system], notice: 'System was successfully created.' }
         format.json { render action: 'show', status: :created, location: @system }
       else
         format.html { render action: 'new' }

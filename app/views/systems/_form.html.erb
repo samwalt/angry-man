@@ -17,15 +17,12 @@
   </div>
   <div class="field">
     <%= f.label :type %><br>
-    <%= f.text_field :type %>
+    <%= f.select :type, 
+                  [['Jira', 'Jira'], ['Bamboo', 'Bamboo'], ['Stash', 'Stash'], ['Crucible', 'Crucible']] %>
   </div>
   <div class="field">
     <%= f.label :description %><br>
     <%= f.text_area :description %>
-  </div>
-  <div class="field">
-    <%= f.label :angryman_id %><br>
-    <%= f.text_field :angryman_id %>
   </div>
   <div class="actions">
     <%= f.submit %>
