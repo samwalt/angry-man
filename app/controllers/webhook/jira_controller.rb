@@ -100,9 +100,10 @@ class Webhook::JiraController < ApplicationController
   def create
     @params = params
 
-	#create a new angryman
-	issue_key = @params["issue"]["key"]
-	@angryman = Angryman.new(issue_key)
+	jira_key = @params["issue"]["key"]
+
+	# create a task workflow
+	Angryman.create_task_workflow(jira_key)
 
     render :nothing => true
   end
