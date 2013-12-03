@@ -15,10 +15,21 @@ class Angryman < ActiveRecord::Base
 		task.jira_key = jira_key
 
 		# create feature branch
-		create_feature_branch
+		stash_key = create_feature_branch
+		task.stash_key = stash_key
 
 		# build environment
-		build_environment
+		bamboo_key = build_environment
+		task.bamboo_key = bamboo_key
 	end
 
+	def self.fix_jira_issue(jira_key)
+		task = TaskWorkflows.find_by(jira_key: jira_key)
+		task.developer_submit!
+	end
+
+	def self.push_code(stash_key)
+		task = TaskWorkflows.find_by(stash_key: stash_key)
+		task.push!
+	end
 end

@@ -103,7 +103,10 @@ class Webhook::JiraController < ApplicationController
 	jira_key = @params["issue"]["key"]
 
 	# create a task workflow
-	Angryman.create_task_workflow(jira_key)
+	Angryman.create_task_workflow(jira_key) if status.eql?('create_issue')
+
+	# fix jira issue
+	Angryman.fix_jira_issue(jira_key) if status.eql?('fix_jira_issue')
 
     render :nothing => true
   end

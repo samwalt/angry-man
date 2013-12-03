@@ -70,6 +70,8 @@ class Webhook::StashController < ApplicationController
   def create
     @params = params
 
+	# push code
+	Angryman.push_code(stash_key: stash_key)
 
     render :nothing => true
   end
