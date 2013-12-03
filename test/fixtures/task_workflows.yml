@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  jira_key: MyString
+  stash_key: MyString
+  crucible_key: MyString
+  workflow_state: MyString
+
+two:
+  jira_key: MyString
+  stash_key: MyString
+  crucible_key: MyString
+  workflow_state: MyString

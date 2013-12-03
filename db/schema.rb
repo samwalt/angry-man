@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131130093128) do
+ActiveRecord::Schema.define(version: 20131203035923) do
 
   create_table "aider_servers", force: true do |t|
     t.string   "name"
@@ -68,6 +68,15 @@ ActiveRecord::Schema.define(version: 20131130093128) do
   end
 
   add_index "task_workflow_definitions", ["model_name"], name: "index_task_workflow_definitions_on_model_name", unique: true
+
+  create_table "task_workflows", force: true do |t|
+    t.string   "jira_key"
+    t.string   "stash_key"
+    t.string   "crucible_key"
+    t.string   "workflow_state"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
