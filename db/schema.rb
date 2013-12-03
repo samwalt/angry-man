@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131203035923) do
+ActiveRecord::Schema.define(version: 20131203101304) do
 
   create_table "aider_servers", force: true do |t|
     t.string   "name"
@@ -76,6 +76,7 @@ ActiveRecord::Schema.define(version: 20131203035923) do
     t.string   "workflow_state"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "bamboo_key"
   end
 
   create_table "users", force: true do |t|
