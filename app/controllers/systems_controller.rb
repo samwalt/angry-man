@@ -26,6 +26,7 @@ class SystemsController < ApplicationController
   def create
     @system = System.new(system_params)
     @angryman = Angryman.find(params[:angryman_id])
+    @system.angryman = @angryman
 
     respond_to do |format|
       if @system.save
@@ -70,6 +71,6 @@ class SystemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def system_params
-      params.require(:system).permit(:name, :type, :description, :angryman_id)
+      params.require(:system).permit(:name, :type, :description)
     end
 end

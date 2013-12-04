@@ -7,8 +7,8 @@ class Angryman < ActiveRecord::Base
 
 	has_many :systems
 
-	include Git
-	include CI
+	# include Git
+	# include CI
 
 	def self.create_task_workflow(jira_key)
 		task = TaskWorkflow.new

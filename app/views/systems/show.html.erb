@@ -1,23 +1,23 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
-  <%= @system.name %>
+	<strong>Name:</strong>
+	<span><%= @system.name %></span>
 </p>
 
 <p>
-  <strong>Type:</strong>
-  <%= @system.type %>
+	<strong>Type:</strong>
+	<span><%= @system.type %></span>
 </p>
 
 <p>
-  <strong>Description:</strong>
-  <%= @system.description %>
+	<strong>Description:</strong>
+	<span><%= @system.description %></span>
 </p>
 
 <p>
-  <strong>Angryman:</strong>
-  <%= @system.angryman %>
+	<strong>Angryman:</strong>
+	<span><%= @system.angryman.nick %></span>
 </p>
 
 <%= link_to 'Back', angryman_systems_path %>
