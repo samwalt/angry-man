@@ -3,6 +3,9 @@
 <p>
   <strong>Nick:</strong>
   <%= @angryman.nick %>
+
+</p>
+
   <% if @angryman.systems.size > 0 %>
   	<table>
   		<thead>
@@ -12,18 +15,21 @@
 		      <th>Description</th>
 		    </tr>
 		</thead>
+
 		<tbody>
 	  		<% @angryman.systems.each do |system| %>
-	  		<tr><%= system.name %></tr>
-	  		<tr><%= system.type %></tr>
-	  		<tr><%= system.description %></tr>
+		  		<tr>
+		  			<td><%= system.name %></td>
+		  			<td><%= system.type %></td>
+		  			<td><%= system.description %></td>
+		  		</tr>
 	  		<% end %>
 	  	</tbody>
   	</table>
-  <% else %>
-  	<p><%= link_to 'Create system', new_angryman_system_path(@angryman) %></p>
+  	
   <% end %>
-</p>
+
+<p><%= link_to 'Create system', new_angryman_system_path(@angryman) %></p>
 
 <%= link_to 'Edit', edit_angryman_path(@angryman) %> |
 <%= link_to 'Back', angrymen_path %>
