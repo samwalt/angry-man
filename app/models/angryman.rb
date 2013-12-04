@@ -26,10 +26,24 @@ class Angryman < ActiveRecord::Base
 	def self.fix_jira_issue(jira_key)
 		task = TaskWorkflows.find_by(jira_key: jira_key)
 		task.developer_submit!
+		notify_code_review
 	end
 
 	def self.push_code(stash_key)
 		task = TaskWorkflows.find_by(stash_key: stash_key)
+		add_to_changeset
 		task.push!
 	end
+
+	def self.review(status)
+		task = TaskWorkflow.find_by(crucible_key: crucible_key)
+		if status.eql?('review_pass')
+			task.review_pass!
+		end
+
+		if status.eql?('review_not_pass')
+			task.review_not_pass!
+		end
+	end
+
 end

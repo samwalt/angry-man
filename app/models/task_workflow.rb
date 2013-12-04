@@ -10,10 +10,12 @@ class TaskWorkflow < ActiveRecord::Base
 	end
 
 	def review_pass
+		#notify_tester_to_test
 		puts "check every reviewer pass"
 	end
 
 	def review_not_pass
+		# change_jira_status_to_reopen
 		puts 'review not pass, to reopen'
 	end
 

@@ -108,6 +108,7 @@ class Webhook::JiraController < ApplicationController
 	# fix jira issue
 	Angryman.fix_jira_issue(jira_key) if status.eql?('fix_jira_issue')
 
+
     render :nothing => true
   end
 
