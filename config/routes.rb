@@ -13,7 +13,7 @@ AngryMan::Application.routes.draw do
     resources :crucible
   end
 
-  resources :dashboard, :projects, :about
+  resources :dashboard, :about
 
   root to: 'welcome#index'
 
