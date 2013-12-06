@@ -46,4 +46,8 @@ class Angryman < ActiveRecord::Base
 		end
 	end
 
+	def config_ok?
+		self.systems.all? { | system | system.config_ok? }
+	end
+
 end

@@ -6,6 +6,10 @@
 
 </p>
 
+<p>
+  <%= @angryman.config_ok? ? "config OK" : "config not OK" %>
+</p>
+
   <% if @angryman.systems.size > 0 %>
   	<table>
   		<thead>
