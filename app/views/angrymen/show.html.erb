@@ -10,6 +10,30 @@
   <%= @angryman.config_ok? ? "config OK" : "config not OK" %>
 </p>
 
+<% if @jira.nil? %>
+	<p>
+	jira没有配置，现在进行配置
+	</p>
+<% end %>
+
+<% if @stash.nil? %>
+	<p>
+	stash没有配置，进行配置
+	</p>
+<% end %>
+
+<% if @bamboo.nil? %>
+	<p>
+	bamboo没有配置，进行配置
+	</p>
+<% end %>
+
+<% if @crucible.nil? %>
+	<p>
+	crucible没有配置，进行配置
+	</p>
+<% end %>
+
   <% if @angryman.systems.size > 0 %>
   	<table>
   		<thead>
