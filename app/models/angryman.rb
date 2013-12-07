@@ -10,6 +10,12 @@ class Angryman < ActiveRecord::Base
 	# include Git
 	# include CI
 
+	# required_systems = [ :jira, :stash, :bamboo, :crucible ]
+
+	def required_systems
+		[ "Jira", "Stash", "Bamboo", "Crucible" ]
+	end
+
 	def self.create_task_workflow(jira_key)
 		task = TaskWorkflow.new
 		task.jira_key = jira_key
@@ -46,8 +52,17 @@ class Angryman < ActiveRecord::Base
 		end
 	end
 
+	def configurations
+		self.systems.inject({}) do | r,s |
+			r.merge! s.type => s
+		end
+	end
+
 	def config_ok?
-		self.systems.all? { | system | system.config_ok? }
+		self.required_systems.all? do | system_required |
+			system = self.configurations[system_required]
+			!system.nil? && system.config_ok?
+		end
 	end
 
 end

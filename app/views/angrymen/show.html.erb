@@ -3,61 +3,41 @@
 <p>
   <strong>Nick:</strong>
   <%= @angryman.nick %>
-
 </p>
 
 <p>
-  <%= @angryman.config_ok? ? "config OK" : "config not OK" %>
+  <%= @angryman.config_ok? ? "status: OK" : "未配置完成，请配置angryman" %>
 </p>
+  
+<table>
+	<tbody>
+		<% @angryman.required_systems.each do |key| %>
+			<%
+				unless @angryman.configurations[key].nil?
+					system = @angryman.configurations[key]
+			%>
+  				<tr>
+  					<td><%= system.name %></td>
+  					<td><%= system.type %></td>
+  					<td><%= system.description %></td>
+  					<% unless system.config_ok? %>
+						<td>
+						<%= system.type %>没有配置，进行配置
+						</td>
+					<% end %>
+  				</tr>
+  			<% else %>
+  				<tr>
+  					<td colspan=4 >
+  						<%= link_to '配置' + key, new_angryman_system_path(@angryman, :type => key) %>
+  					</td>
+  				</tr>
+			<% end %>	
+		<% end %>
+	</tbody>
+</table>
 
-<% if @jira.nil? %>
-	<p>
-	jira没有配置，现在进行配置
-	</p>
-<% end %>
-
-<% if @stash.nil? %>
-	<p>
-	stash没有配置，进行配置
-	</p>
-<% end %>
-
-<% if @bamboo.nil? %>
-	<p>
-	bamboo没有配置，进行配置
-	</p>
-<% end %>
-
-<% if @crucible.nil? %>
-	<p>
-	crucible没有配置，进行配置
-	</p>
-<% end %>
-
-  <% if @angryman.systems.size > 0 %>
-  	<table>
-  		<thead>
-		    <tr>
-		      <th>Name</th>
-		      <th>Type</th>
-		      <th>Description</th>
-		    </tr>
-		</thead>
-
-		<tbody>
-	  		<% @angryman.systems.each do |system| %>
-		  		<tr>
-		  			<td><%= system.name %></td>
-		  			<td><%= system.type %></td>
-		  			<td><%= system.description %></td>
-		  		</tr>
-	  		<% end %>
-	  	</tbody>
-  	</table>
-  	
-  <% end %>
-
-<p><%= link_to 'Create system', new_angryman_system_path(@angryman) %></p>
-
+<p>
 <%= link_to 'Edit', edit_angryman_path(@angryman) %> |
 <%= link_to 'Back', angrymen_path %>
+</p>

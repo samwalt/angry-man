@@ -14,7 +14,10 @@ class SystemsController < ApplicationController
 
   # GET /systems/new
   def new
-    @system = System.new
+    @system = System.new do | system |
+      system.type = params[:type]
+      puts system.angryman_id
+    end
   end
 
   # GET /systems/1/edit

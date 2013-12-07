@@ -16,9 +16,8 @@
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :type %><br>
-    <%= f.select :type, 
-                  [['Jira', 'Jira'], ['Bamboo', 'Bamboo'], ['Stash', 'Stash'], ['Crucible', 'Crucible']] %>
+    <%= f.label :type %>: <%= @system.type %><br>
+    <%= f.hidden_field :type, :value => @system.type %>
   </div>
   <div class="field">
     <%= f.label :description %><br>
