@@ -4,7 +4,8 @@ class SystemsController < ApplicationController
   # GET /systems
   # GET /systems.json
   def index
-    @systems = System.all
+    @angryman = Angryman.find(params[:angryman_id])
+    @systems = @angryman.systems
   end
 
   # GET /systems/1
