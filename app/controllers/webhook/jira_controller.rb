@@ -1,4 +1,3 @@
-require 'angryman/tasks/task'
 
 class Webhook::JiraController < ApplicationController
   skip_before_filter :verify_authenticity_token, :only => [:create]
@@ -98,9 +97,12 @@ class Webhook::JiraController < ApplicationController
   # Rendered text template (0.0ms)
   # Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms)
   def create
+	  # Actually this is issue update event.
     @params = params
 
 	jira_key = @params["issue"]["key"]
+
+	puts "jira_key is #{jira_key}"
 
 	# create a task workflow
 	Angryman.create_task_workflow(jira_key) if status.eql?('create_issue')
