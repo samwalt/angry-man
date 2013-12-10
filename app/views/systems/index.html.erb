@@ -10,6 +10,7 @@
       <th></th>
       <th></th>
       <th></th>
+      <th></th>
     </tr>
   </thead>
 
@@ -19,10 +20,11 @@
         <td><%= system.name %></td>
         <td><%= system.type %></td>
         <td><%= system.description %></td>
-        <td><%= system.angryman %></td>
+        <td><%= system.angryman.nick %></td>
         <td><%= link_to 'Show', angryman_system_path( system.angryman , system) %></td>
         <td><%= link_to 'Edit', edit_angryman_system_path(system.angryman, system) %></td>
         <td><%= link_to 'Destroy', angryman_systems_path( system.angryman, system ), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Config', %></td>
       </tr>
     <% end %>
   </tbody>

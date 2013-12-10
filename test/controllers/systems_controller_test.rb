@@ -8,7 +8,7 @@ class SystemsControllerTest < ActionController::TestCase
   test "should get index" do
     get :index
     assert_response :success
-    assert_not_nil assigns(:systems)
+    assert_not_nil assigns(:system)
   end
 
   test "should get new" do
