@@ -20,13 +20,16 @@ class Angryman < ActiveRecord::Base
 		task = TaskWorkflow.new
 		task.jira_key = jira_key
 
+
 		# create feature branch
-		stash_key = create_feature_branch
-		task.stash_key = stash_key
+		#stash_key = create_feature_branch
+		#task.stash_key = stash_key
 
 		# build environment
-		bamboo_key = build_environment
-		task.bamboo_key = bamboo_key
+		#bamboo_key = build_environment
+		#task.bamboo_key = bamboo_key
+
+		task.save
 	end
 
 	def self.fix_jira_issue(jira_key)
