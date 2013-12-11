@@ -22,7 +22,8 @@
   					<td><%= system.description %></td>
   					<% unless system.config_ok? %>
 						<td>
-						<%= system.type %>没有配置，进行配置 
+                            <%= link_to system.type + '没有配置用户, 去配置',
+                                        new_angryman_system_aider_system_path(@angryman, system)%>
 						</td>
 					<% end %>
   				</tr>

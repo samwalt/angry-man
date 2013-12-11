@@ -1,0 +1,31 @@
+<h1>Listing systems</h1>
+
+<table>
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Username</th>
+    <th>base64key</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @aiderSystem.each do |aiderSystem| %>
+      <tr>
+        <td><%= aiderSystem.name %></td>
+        <td><%= aiderSystem.username %></td>
+        <td><%= aiderSystem.base64key %></td>
+        <td><%= link_to 'Show', angryman_system_aider_system_path(aiderSystem.system.angryman, aiderSystem.system, aiderSystem) %></td>
+        <td><%= link_to 'Edit', edit_angryman_system_aider_system_path(aiderSystem.system.angryman, aiderSystem.system, aiderSystem) %></td>
+        <td><%= link_to 'Destroy', angryman_system_aider_system_path(aiderSystem.system.angryman, aiderSystem.system, aiderSystem), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New System', new_angryman_system_path %>
