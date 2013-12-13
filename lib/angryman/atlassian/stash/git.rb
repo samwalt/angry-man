@@ -14,9 +14,10 @@ module Atlassian
 		  Dir.chdir(Base_Path)
 		  Dir.mkdir(jira_key)
 		  Dir.chdir(jira_key)
-		  system('git clone http://xxx/xxx/xxx.git')
+		  system("git clone http://#{username}:#{password}@#{host}:#{port}/xxx/#{repository_name}.git")
+		  Dir.chdir(repository_name)
 		  system("git checkout -b #{jira_key} master")
-		  system("git push origin #{jira_key}")
+		  system("git push http://#{username}:#{password}@#{host}:#{port}/xxx/#{repository_name}.git #{jira_key}")
 
       end
 
