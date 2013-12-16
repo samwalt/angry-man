@@ -22,7 +22,7 @@ class Angryman < ActiveRecord::Base
 
 
 		# create feature branch
-		#stash_key = create_feature_branch
+		#stash_key = create_feature_branch(jira_key)
 		#task.stash_key = stash_key
 
 		# build environment
