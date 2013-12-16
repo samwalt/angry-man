@@ -3,7 +3,7 @@ AngryMan::Application.routes.draw do
   devise_for :users
   resources :angrymen do
     resources :systems do
-      resources :aider_system
+      resources :aider_systems
     end
   end
 

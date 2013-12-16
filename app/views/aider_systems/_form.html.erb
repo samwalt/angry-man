@@ -1,4 +1,4 @@
-<%= form_for(@aiderSystem, :url => angryman_system_aider_system_path) do |f| %>
+<%= form_for(@aiderSystem, :url => angryman_system_aider_systems_path) do |f| %>
   <% if @aiderSystem.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@aiderSystem.errors.count, "error") %> prohibited this system from being saved:</h2>
@@ -22,6 +22,14 @@
     <div class="field">
         <%= f.label :password %><br>
         <%= f.password_field :password %>
+    </div>
+    <div class="field">
+        <%= @aiderSystem.system.type %>_username<br>
+        <input type="text" name="authUsername" />
+    </div>
+    <div class="field">
+        <%= @aiderSystem.system.type%>_password<br>
+        <input type="password" name="authPassword" />
     </div>
 
     <div class="actions">

@@ -1,4 +1,4 @@
-class AiderSystemController < ApplicationController
+class AiderSystemsController < ApplicationController
   before_action :set_aiderSystem, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -10,14 +10,22 @@ class AiderSystemController < ApplicationController
   end
 
   def new
-    @aiderSystem = AiderSystem.new
+    @aiderSystem = AiderSystem.new do | aiderSystem |
+      aiderSystem.system = System.find(params[:system_id])
+      puts aiderSystem.system
+    end
   end
 
   def edit
   end
 
   def create
+
+    @authUsername = params[:authUsername]
+    @authPassword = params[:authPassword]
+
     @aiderSystem = AiderSystem.new(aiderSystem_params)
+
     @angryman = Angryman.find(params[:angryman_id])
     @system = System.find(params[:system_id])
     @aiderSystem.system = @system
