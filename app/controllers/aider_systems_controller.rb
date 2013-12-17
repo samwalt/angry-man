@@ -25,6 +25,9 @@ class AiderSystemsController < ApplicationController
     @authPassword = params[:authPassword]
 
     @aiderSystem = AiderSystem.new(aiderSystem_params)
+    @aiderSystem.name = params[:name]
+    @aiderSystem.username = params[:username]
+    @aiderSystem.password = params[:password] ## 需要加密
 
     @angryman = Angryman.find(params[:angryman_id])
     @system = System.find(params[:system_id])
@@ -63,6 +66,7 @@ class AiderSystemsController < ApplicationController
     end
 
     def aiderSystem_params
-      params.require(:aiderSystem).permit(:name, :username, :password)
+      ## 不需要校验是否是model里面的属性
+      params.permit(:name, :username, :password)
     end
 end

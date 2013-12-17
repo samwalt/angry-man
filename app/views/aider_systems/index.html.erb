@@ -13,16 +13,14 @@
   </thead>
 
   <tbody>
-  <% @aiderSystem.each do |aiderSystem| %>
       <tr>
-        <td><%= aiderSystem.name %></td>
-        <td><%= aiderSystem.username %></td>
-        <td><%= aiderSystem.base64key %></td>
-        <td><%= link_to 'Show', angryman_system_aider_system_path(aiderSystem.system.angryman, aiderSystem.system, aiderSystem) %></td>
-        <td><%= link_to 'Edit', edit_angryman_system_aider_system_path(aiderSystem.system.angryman, aiderSystem.system, aiderSystem) %></td>
-        <td><%= link_to 'Destroy', angryman_system_aider_system_path(aiderSystem.system.angryman, aiderSystem.system, aiderSystem), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= @aiderSystem.name %></td>
+        <td><%= @aiderSystem.username %></td>
+        <td><%= @aiderSystem.base64key %></td>
+        <td><%= link_to 'Show', angryman_system_aider_systems_path(@aiderSystem.system.angryman, @aiderSystem.system, @aiderSystem) %></td>
+        <td><%= link_to 'Edit', edit_angryman_system_aider_system_path(@aiderSystem.system.angryman, @aiderSystem.system, @aiderSystem) %></td>
+        <td><%= link_to 'Destroy', angryman_system_aider_systems_path(@aiderSystem.system.angryman, @aiderSystem.system, @aiderSystem), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
-  <% end %>
   </tbody>
 </table>
 
